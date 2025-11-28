@@ -1,40 +1,50 @@
-# EdgeOne Payload Website Template
+# EdgeOne Payload CMS With MongoDB Website Template
 
-This is a [Payload Website Template](https://github.com/payloadcms/payload/blob/main/templates/website). Use it to power websites, blogs, or portfolios from small to enterprise. This repo includes a fully-working backend, enterprise-grade admin panel, and a beautifully designed, production-ready website.
+This is a Payload CMS with MongoDB Website Template designed to power websites, blogs, or portfolios ranging from small projects to enterprise-level applications. This repository includes a fully functional backend, an enterprise-grade admin panel, and a beautifully designed, production-ready website.
 
-This template is right for you if you are working on:
+This template is ideal for:
 
-- A personal or enterprise-grade website, blog, or portfolio
-- A content publishing platform with a fully featured publication workflow
-- Exploring the capabilities of Payload
+- Personal or enterprise-grade websites, blogs, or portfolios
+- Content publishing platforms with fully featured publication workflows
+- Exploring Payload's capabilities
 
 ## Quick Start
 
 ### Deploying to EdgeOne Pages
 
+1. Prepare the necessary environment variables:
+   - **DATABASE_URI**: Your MongoDB connection string like:
+     ```
+     mongodb+srv://username:password@cluster0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+     ```
+   - **PAYLOAD_SECRET**: This should be a long, unguessable, strong password. You can use a password manager to generate one. For example, run:
+     ```
+     openssl rand -base64 32
+     ```
+   - **NEXT_PUBLIC_SERVER_URL**: Your website URL like: `https://payload-mongodb-starter.edgeone.app`
+
+2. [Go to the deployment page](https://console.tencentcloud.com/edgeone/pages/new?template=payload-mongodb-starter&from=open_templates) and fill in all prepared environment variables.
+
+   ![](https://cloudcache.tencent-cloud.com/qcloud/ui/static/static_source_business/0f296398-aa8a-4d8f-b70f-45e4999c8faa1.png)
+
+3. Click "Create" to start the deployment process.
 
 ### Local Development
 
-1. Create a .env file and fill in the variables
+1. Create a `.env` file and configure the variables:
+
 ```env
 # Database connection string
 DATABASE_URI=YOUR_MONGODB_URL_HERE
-# Used to encrypt JWT tokens. This should be long unguessable strong passwords, you can also use a password manager to generate one for these.
+# Used to encrypt JWT tokens. This should be a long, unguessable, strong password. You can use a password manager to generate one.
 PAYLOAD_SECRET=YOUR_PAYLOAD_SECRET_HERE
-# Used to configure CORS, format links and more. No trailing slash
+# Used to configure CORS, format links, and more. No trailing slash.
 NEXT_PUBLIC_SERVER_URL=http://localhost:3000
 # Secret used to authenticate cron jobs
 CRON_SECRET=YOUR_CRON_SECRET_HERE
 # Used to validate preview requests
 PREVIEW_SECRET=YOUR_SECRET_HERE
-
 ```
 
 2. `pnpm install && pnpm dev` to install dependencies and start the dev server
 3. open `http://localhost:3000` to open the app in your browser
-
-
-
-
-
-
