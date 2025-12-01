@@ -6,6 +6,16 @@ export const homeStatic: RequiredDataFromCollectionSlug<'pages'> = {
   _status: 'published',
   hero: {
     type: 'lowImpact',
+    links: [
+      {
+        link: {
+          type: 'custom',
+          appearance: 'default',
+          label: 'All posts',
+          url: '/posts',
+        },
+      },
+    ],
     richText: {
       root: {
         type: 'root',
