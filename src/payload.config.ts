@@ -81,7 +81,7 @@ export default buildConfig({
         },
         region: process.env.S3_REGION,
         endpoint: process.env.S3_ENDPOINT,
-        forcePathStyle: true,
+        // 腾讯云 COS 使用 virtual-hosted style，不需要 forcePathStyle
       },
     }),
   ],
