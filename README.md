@@ -46,8 +46,6 @@ DATABASE_URI=YOUR_MONGODB_URL_HERE
 PAYLOAD_SECRET=YOUR_PAYLOAD_SECRET_HERE
 # Used to configure CORS, format links, and more. No trailing slash.
 NEXT_PUBLIC_SERVER_URL=http://localhost:3000
-# Secret used to authenticate cron jobs
-CRON_SECRET=YOUR_CRON_SECRET_HERE
 # Used to validate preview requests
 PREVIEW_SECRET=YOUR_SECRET_HERE
 # S3 Storage Configuration 
