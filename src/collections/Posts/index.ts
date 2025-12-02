@@ -217,9 +217,9 @@ export const Posts: CollectionConfig<'posts'> = {
     slugField(),
   ],
   hooks: {
-    // afterChange: [revalidatePost], // 临时禁用以排查 EdgeOne 500 错误
+    afterChange: [revalidatePost],
     afterRead: [populateAuthors],
-    // afterDelete: [revalidateDelete], // 临时禁用以排查 EdgeOne 500 错误
+    afterDelete: [revalidateDelete],
   },
   versions: {
     drafts: {
