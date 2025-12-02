@@ -35,7 +35,6 @@ export const Media: CollectionConfig = {
     },
   ],
   upload: {
-    // 使用 S3 存储时不需要 staticDir，移除以避免 serverless 环境文件系统问题
     adminThumbnail: 'thumbnail',
     focalPoint: true,
     imageSizes: [
