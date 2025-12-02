@@ -79,8 +79,7 @@ export default buildConfig({
           accessKeyId: process.env.S3_ACCESS_KEY_ID || '',
           secretAccessKey: process.env.S3_SECRET_ACCESS_KEY || '',
         },
-        region: process.env.S3_REGION || 'ap-guangzhou',
-        // 腾讯云 COS 端点
+        region: process.env.S3_REGION,
         endpoint: process.env.S3_ENDPOINT,
         forcePathStyle: true,
       },
