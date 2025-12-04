@@ -2,32 +2,28 @@
 
 This is a PayloadCMS with MongoDB Website Template designed to power websites, blogs, or portfolios ranging from small projects to enterprise-level applications. This repository includes a fully functional backend, an enterprise-grade admin panel, and a beautifully designed, production-ready website.
 
-This template is ideal for:
-
-- Personal or enterprise-grade websites, blogs, or portfolios
-- Content publishing platforms with fully featured publication workflows
-- Exploring Payload's capabilities
-
 ## Quick Start
 
 ### Deploying to EdgeOne Pages
 
 1. Prepare the necessary environment variables:
-   - **DATABASE_URI**: Your MongoDB connection string like:
+   1. **DATABASE_URI**: Your MongoDB connection string like:
      ```
      mongodb+srv://username:password@cluster0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
      ```
-   - **PAYLOAD_SECRET**: This should be a long, unguessable, strong password. You can use a password manager to generate one. For example, run:
+   2. **PAYLOAD_SECRET**: This should be a long, unguessable, strong password. You can use a password manager to generate one. For example, run:
      ```
      openssl rand -base64 32
      ```
-   - **NEXT_PUBLIC_SERVER_URL**: Your website URL like: `https://payload-mongodb-starter.edgeone.app`
-   - **PREVIEW_SECRET**: Used to validate preview requests
-   - **S3_BUCKET**: S3 Storage Configuration 
-   - **S3_REGION**: S3 Storage Configuration 
-   - **S3_ACCESS_KEY_ID**: S3 Storage Configuration 
-   - **S3_SECRET_ACCESS_KEY**: S3 Storage Configuration 
-   - **S3_ENDPOINT**: S3 Storage Configuration 
+   3. **NEXT_PUBLIC_SERVER_URL**: Your website URL like: `https://payload-mongodb-starter.edgeone.app`
+   4. **PREVIEW_SECRET**: Used to validate preview requests
+
+      **S3 configuration settings are used to store uploaded files, such as blog cover images.**
+   5. **S3_BUCKET**
+   6. **S3_REGION**
+   7. **S3_ACCESS_KEY_ID**
+   8. **S3_SECRET_ACCESS_KEY**
+   9. **S3_ENDPOINT**
 
 2. One-click deployment to EdgeOne Pages:
 

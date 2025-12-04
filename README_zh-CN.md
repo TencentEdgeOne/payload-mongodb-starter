@@ -2,32 +2,28 @@
 
 这是一个基于 PayloadCMS 和 MongoDB 的网站模板，适用于构建从小型项目到企业级应用的网站、博客或作品集。本仓库包含功能完整的后端、企业级管理面板，以及设计精美、可直接用于生产环境的网站前端。
 
-此模板适用于：
-
-- 个人或企业级网站、博客或作品集
-- 具有完整发布工作流的内容发布平台
-- 探索 Payload 的各项功能
-
 ## 快速开始
 
 ### 部署到 EdgeOne Pages
 
 1. 准备必要的环境变量：
-   - **DATABASE_URI**：MongoDB 连接字符串，格式如下：
+   1. **DATABASE_URI**：MongoDB 连接字符串，格式如下：
      ```
      mongodb+srv://username:password@cluster0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
      ```
-   - **PAYLOAD_SECRET**：用于加密 JWT 令牌，应该是一个长且难以猜测的强密码。可以使用密码管理器生成，或运行以下命令：
+   2. **PAYLOAD_SECRET**：用于加密 JWT 令牌，应该是一个长且难以猜测的强密码。可以使用密码管理器生成，或运行以下命令：
      ```
      openssl rand -base64 32
      ```
-   - **NEXT_PUBLIC_SERVER_URL**：网站 URL，如：`https://payload-mongodb-starter.edgeone.app`
-   - **PREVIEW_SECRET**：用于验证预览请求
-   - **S3_BUCKET**：S3 存储配置 - 存储桶名称
-   - **S3_REGION**：S3 存储配置 - 地域
-   - **S3_ACCESS_KEY_ID**：S3 存储配置 - 访问密钥 ID
-   - **S3_SECRET_ACCESS_KEY**：S3 存储配置 - 访问密钥
-   - **S3_ENDPOINT**：S3 存储配置 - 端点地址
+   3. **NEXT_PUBLIC_SERVER_URL**：网站 URL，如：`https://payload-mongodb-starter.edgeone.app`
+   4. **PREVIEW_SECRET**：用于验证预览请求
+
+      **S3相关配置，用来存储上传文件，比如博客封面图等**
+   5. **S3_BUCKET**
+   6. **S3_REGION**
+   7. **S3_ACCESS_KEY_ID**
+   8. **S3_SECRET_ACCESS_KEY**
+   9. **S3_ENDPOINT**
 
 2. 一键部署到 EdgeOne Pages：
 
