@@ -2,6 +2,27 @@
 
 这是一个基于 PayloadCMS 和 MongoDB 的网站模板，适用于构建从小型项目到企业级应用的网站、博客或作品集。本仓库包含功能完整的后端、企业级管理面板，以及设计精美、可直接用于生产环境的网站前端。
 
+此模板适合以下场景：
+
+- 个人或企业级网站、博客或作品集
+- 具有完整发布工作流的内容发布平台
+- 探索 Payload 的功能特性
+
+核心功能：
+
+- 预配置的 Payload 配置
+- 用户认证
+- 访问控制
+- 布局构建器
+- 草稿预览
+- 实时预览
+- 按需重新验证
+- SEO
+- 表单
+- 搜索
+- 重定向
+- 网站
+
 ## 快速开始
 
 ### 部署到 EdgeOne Pages
@@ -16,14 +37,13 @@
      openssl rand -base64 32
      ```
    3. **NEXT_PUBLIC_SERVER_URL**：网站 URL，如：`https://payload-mongodb-starter.edgeone.app`
-   4. **PREVIEW_SECRET**：用于验证预览请求
 
       **S3相关配置，用来存储上传文件，比如博客封面图等**
-   5. **S3_BUCKET**
-   6. **S3_REGION**
-   7. **S3_ACCESS_KEY_ID**
-   8. **S3_SECRET_ACCESS_KEY**
-   9. **S3_ENDPOINT**
+   4. **S3_BUCKET**
+   5. **S3_REGION**
+   6. **S3_ACCESS_KEY_ID**
+   7. **S3_SECRET_ACCESS_KEY**
+   8. **S3_ENDPOINT**
 
 2. 一键部署到 EdgeOne Pages：
 
@@ -43,8 +63,6 @@ DATABASE_URI=YOUR_MONGODB_URL_HERE
 PAYLOAD_SECRET=YOUR_PAYLOAD_SECRET_HERE
 # 用于配置 CORS、格式化链接等，末尾不要加斜杠
 NEXT_PUBLIC_SERVER_URL=http://localhost:3000
-# 用于验证预览请求
-PREVIEW_SECRET=YOUR_SECRET_HERE
 # S3 存储配置，上传文件的存储
 S3_BUCKET=xxx
 S3_REGION=xxx

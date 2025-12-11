@@ -2,6 +2,27 @@
 
 This is a PayloadCMS with MongoDB Website Template designed to power websites, blogs, or portfolios ranging from small projects to enterprise-level applications. This repository includes a fully functional backend, an enterprise-grade admin panel, and a beautifully designed, production-ready website.
 
+This template is right for you if you are working on:
+
+- A personal or enterprise-grade website, blog, or portfolio
+- A content publishing platform with a fully featured publication workflow
+- Exploring the capabilities of Payload
+
+Core features:
+
+- Pre-configured Payload Config
+- Authentication
+- Access Control
+- Layout Builder
+- Draft Preview
+- Live Preview
+- On-demand Revalidation
+- SEO
+- Form
+- Search
+- Redirects
+- Website
+
 ## Quick Start
 
 ### Deploying to EdgeOne Pages
@@ -16,14 +37,13 @@ This is a PayloadCMS with MongoDB Website Template designed to power websites, b
      openssl rand -base64 32
      ```
    3. **NEXT_PUBLIC_SERVER_URL**: Your website URL like: `https://payload-mongodb-starter.edgeone.app`
-   4. **PREVIEW_SECRET**: Used to validate preview requests
 
       **S3 configuration settings are used to store uploaded files, such as blog cover images.**
-   5. **S3_BUCKET**
-   6. **S3_REGION**
-   7. **S3_ACCESS_KEY_ID**
-   8. **S3_SECRET_ACCESS_KEY**
-   9. **S3_ENDPOINT**
+   4. **S3_BUCKET**
+   5. **S3_REGION**
+   6. **S3_ACCESS_KEY_ID**
+   7. **S3_SECRET_ACCESS_KEY**
+   8. **S3_ENDPOINT**
 
 2. One-click deployment to EdgeOne Pages:
 
@@ -42,8 +62,6 @@ DATABASE_URI=YOUR_MONGODB_URL_HERE
 PAYLOAD_SECRET=YOUR_PAYLOAD_SECRET_HERE
 # Used to configure CORS, format links, and more. No trailing slash.
 NEXT_PUBLIC_SERVER_URL=http://localhost:3000
-# Used to validate preview requests
-PREVIEW_SECRET=YOUR_SECRET_HERE
 # S3 Storage Configuratio, Storage of uploaded files
 S3_BUCKET=xxx
 S3_REGION=xxx
