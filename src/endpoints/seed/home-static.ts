@@ -15,6 +15,14 @@ export const homeStatic: RequiredDataFromCollectionSlug<'pages'> = {
           url: '/posts',
         },
       },
+      {
+        link: {
+          type: 'custom',
+          appearance: 'outline',
+          label: 'Talk to us',
+          url: '/talk-to-us',
+        },
+      },
     ],
     richText: {
       root: {
