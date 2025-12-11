@@ -65,13 +65,13 @@ Payload 配置专门针对大多数网站的需求进行了定制，预配置如
 
 - ##### Users（用户认证）
 
-  Users 是启用了认证功能的集合，可以访问管理面板和未发布的内容。详情请参阅 [Access Control](#access-control访问控制)。
+  Users 是启用了认证功能的集合，可以访问管理面板和未发布的内容。
 
   如需更多帮助，请参阅官方 [Auth Example](https://github.com/payloadcms/payload/tree/main/examples/auth) 或 [Authentication](https://payloadcms.com/docs/authentication/overview#authentication-overview) 文档。
 
 - ##### Posts（文章）
 
-  Posts 用于生成博客文章、新闻资讯或任何其他随时间发布的内容。所有文章都启用了布局构建器，您可以使用布局构建块为每篇文章生成独特的布局，详情请参阅 Layout Builder（#layout-builder）。文章还启用了草稿功能，您可以在发布到网站之前预览它们，详情请参阅 [Draft Preview](#draft-preview)。
+  Posts 用于生成博客文章、新闻资讯或任何其他随时间发布的内容。所有文章都启用了布局构建器，您可以使用布局构建块为每篇文章生成独特的布局。文章还启用了草稿功能，您可以在发布到网站之前预览它们。
 
 - ##### Pages（页面）
 
