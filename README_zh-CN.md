@@ -47,7 +47,7 @@
 
 2. 一键部署到 EdgeOne Pages：
 
-    [![使用 EdgeOne Pages 部署](https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg)](https://edgeone.ai/pages/new?repository-url=https%3A%2F%2Fgithub.com%2Fzhoujie0531%2Fpayload-mongodb-starter)
+  [![使用 EdgeOne Pages 部署](https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg)](https://console.cloud.tencent.com/edgeone/pages/new?template=payload-mongodb-starter)
 
 3. 填写环境变量后，点击 **创建** 按钮即可启动部署
 

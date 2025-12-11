@@ -47,7 +47,7 @@ Core features:
 
 2. One-click deployment to EdgeOne Pages:
 
-    [![Use EdgeOne Pages to deploy](https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg)](https://edgeone.ai/pages/new?repository-url=https%3A%2F%2Fgithub.com%2Fzhoujie0531%2Fpayload-mongodb-starter)
+  [![Deploy with EdgeOne Pages](https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg)](https://edgeone.ai/pages/new?template=payload-mongodb-starter)
 
 3. After filling in the environment variables, click the **Create** button to start the deployment.
 
