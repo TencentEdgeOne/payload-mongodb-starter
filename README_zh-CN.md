@@ -23,11 +23,8 @@
 - 重定向
 - 网站
 
-## 快速开始
-
 ### 部署到 EdgeOne Pages
-
-1. 准备必要的环境变量：
+#### 准备必要的环境变量：
    1. **DATABASE_URI**：MongoDB 连接字符串，格式如下：
      ```
      mongodb+srv://username:password@cluster0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
@@ -45,11 +42,11 @@
    7. **S3_SECRET_ACCESS_KEY**
    8. **S3_ENDPOINT**
 
-2. 一键部署到 EdgeOne Pages：
+####  一键部署到 EdgeOne Pages：
 
   [![使用 EdgeOne Pages 部署](https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg)](https://console.cloud.tencent.com/edgeone/pages/new?template=payload-mongodb-starter)
 
-3. 填写环境变量后，点击 **创建** 按钮即可启动部署
+#### 填写环境变量后，点击 **创建** 按钮即可启动部署
 
 
 ### 本地开发
