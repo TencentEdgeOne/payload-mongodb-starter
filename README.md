@@ -24,8 +24,7 @@ Core features:
 - Website
 
 ### Deploying to EdgeOne Pages
-
-####  Prepare the necessary environment variables:
+**Step1: Prepare the necessary environment variables:**
 1. **DATABASE_URI**: Your MongoDB connection string like:
   ```
   mongodb+srv://username:password@cluster0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
@@ -44,11 +43,11 @@ S3 configuration settings are used to store uploaded files, such as blog cover i
 7. **S3_SECRET_ACCESS_KEY**
 8. **S3_ENDPOINT**
 
-####  One-click deployment to EdgeOne Pages:
+**Step2: One-click deployment to EdgeOne Pages:**
 
   [![Deploy with EdgeOne Pages](https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg)](https://edgeone.ai/pages/new?template=payload-mongodb-starter)
 
-####  After filling in the environment variables, click the **Create** button to start the deployment.
+**Step3: After filling in the environment variables, click the **Create** button to start the deployment.**
 
 ### Local Development
 
