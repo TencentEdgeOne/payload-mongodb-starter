@@ -25,22 +25,23 @@
 
 ### 部署到 EdgeOne Pages
 #### 准备必要的环境变量：
-   1. **DATABASE_URI**：MongoDB 连接字符串，格式如下：
-     ```
-     mongodb+srv://username:password@cluster0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
-     ```
-   2. **PAYLOAD_SECRET**：用于加密 JWT 令牌，应该是一个长且难以猜测的强密码。可以使用密码管理器生成，或运行以下命令：
-     ```
-     openssl rand -base64 32
-     ```
-   3. **NEXT_PUBLIC_SERVER_URL**：网站 URL，如：`https://payload-mongodb-starter.edgeone.app`
+1. **DATABASE_URI**：MongoDB 连接字符串，格式如下：
+  ```
+  mongodb+srv://username:password@cluster0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+  ```
+2. **PAYLOAD_SECRET**：用于加密 JWT 令牌，应该是一个长且难以猜测的强密码。可以使用密码管理器生成，或运行以下命令：
+  ```
+  openssl rand -base64 32
+  ```
+3. **NEXT_PUBLIC_SERVER_URL**：网站 URL，如：`https://payload-mongodb-starter.edgeone.app`
 
-      **S3相关配置，用来存储上传文件，比如博客封面图等**
-   4. **S3_BUCKET**
-   5. **S3_REGION**
-   6. **S3_ACCESS_KEY_ID**
-   7. **S3_SECRET_ACCESS_KEY**
-   8. **S3_ENDPOINT**
+S3相关配置，用来存储上传文件，比如博客封面图等:
+
+4. **S3_BUCKET**
+5. **S3_REGION**
+6. **S3_ACCESS_KEY_ID**
+7. **S3_SECRET_ACCESS_KEY**
+8. **S3_ENDPOINT**
 
 ####  一键部署到 EdgeOne Pages：
 

@@ -26,22 +26,23 @@ Core features:
 ### Deploying to EdgeOne Pages
 
 ####  Prepare the necessary environment variables:
-   1. **DATABASE_URI**: Your MongoDB connection string like:
-     ```
-     mongodb+srv://username:password@cluster0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
-     ```
-   2. **PAYLOAD_SECRET**: This should be a long, unguessable, strong password. You can use a password manager to generate one. For example, run:
-     ```
-     openssl rand -base64 32
-     ```
-   3. **NEXT_PUBLIC_SERVER_URL**: Your website URL like: `https://payload-mongodb-starter.edgeone.app`
+1. **DATABASE_URI**: Your MongoDB connection string like:
+  ```
+  mongodb+srv://username:password@cluster0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+  ```
+2. **PAYLOAD_SECRET**: This should be a long, unguessable, strong password. You can use a password manager to generate one. For example, run:
+  ```
+  openssl rand -base64 32
+  ```
+3. **NEXT_PUBLIC_SERVER_URL**: Your website URL like: `https://payload-mongodb-starter.edgeone.app`
 
-      **S3 configuration settings are used to store uploaded files, such as blog cover images.**
-   4. **S3_BUCKET**
-   5. **S3_REGION**
-   6. **S3_ACCESS_KEY_ID**
-   7. **S3_SECRET_ACCESS_KEY**
-   8. **S3_ENDPOINT**
+S3 configuration settings are used to store uploaded files, such as blog cover images: 
+
+4. **S3_BUCKET**
+5. **S3_REGION**
+6. **S3_ACCESS_KEY_ID**
+7. **S3_SECRET_ACCESS_KEY**
+8. **S3_ENDPOINT**
 
 ####  One-click deployment to EdgeOne Pages:
 
