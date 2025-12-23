@@ -1,7 +1,6 @@
 import { s3Storage } from '@payloadcms/storage-s3'
 import { mongooseAdapter } from '@payloadcms/db-mongodb'
 
-import sharp from 'sharp' // sharp-import
 import path from 'path'
 import { buildConfig, PayloadRequest } from 'payload'
 import { fileURLToPath } from 'url'
@@ -19,6 +18,14 @@ import { getServerSideURL } from './utilities/getURL'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
+
+const s3Endpoint = process.env.S3_ENDPOINT || ''
+const s3Bucket = process.env.S3_BUCKET || ''
+const endpointUrl = s3Endpoint ? new URL(s3Endpoint) : null
+const endpointHasBucket = endpointUrl && endpointUrl.hostname.startsWith(`${s3Bucket}.`)
+const s3ApiEndpoint = endpointHasBucket
+  ? `${endpointUrl.protocol}//${endpointUrl.hostname.replace(`${s3Bucket}.`, '')}`
+  : s3Endpoint
 
 export default buildConfig({
   admin: {
@@ -71,22 +78,26 @@ export default buildConfig({
       collections: {
         media: {
           prefix: 'media',
+          disableLocalStorage: true,
+          generateFileURL: ({ filename, prefix }) => {
+            return `${s3Endpoint}/${prefix}/${filename}`
+          },
         },
       },
-      bucket: process.env.S3_BUCKET || '',
+      bucket: s3Bucket,
       config: {
         credentials: {
           accessKeyId: process.env.S3_ACCESS_KEY_ID || '',
           secretAccessKey: process.env.S3_SECRET_ACCESS_KEY || '',
         },
         region: process.env.S3_REGION,
-        endpoint: process.env.S3_ENDPOINT,
-        forcePathStyle: true,
+        endpoint: s3ApiEndpoint,
+        forcePathStyle: false,
       },
     }),
   ],
   secret: process.env.PAYLOAD_SECRET,
-  sharp,
+  // sharp 
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },

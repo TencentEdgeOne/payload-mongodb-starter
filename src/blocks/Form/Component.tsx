@@ -4,6 +4,7 @@ import type { FormFieldBlock, Form as FormType } from '@payloadcms/plugin-form-b
 import { useRouter } from 'next/navigation'
 import React, { useCallback, useState } from 'react'
 import { useForm, FormProvider } from 'react-hook-form'
+import { Loader2 } from 'lucide-react'
 import RichText from '@/components/RichText'
 import { Button } from '@/components/ui/button'
 import type { DefaultTypedEditorState } from '@payloadcms/richtext-lexical'
@@ -48,19 +49,14 @@ export const FormBlock: React.FC<
 
   const onSubmit = useCallback(
     (data: FormFieldBlock[]) => {
-      let loadingTimerID: ReturnType<typeof setTimeout>
       const submitForm = async () => {
         setError(undefined)
+        setIsLoading(true)
 
         const dataToSend = Object.entries(data).map(([name, value]) => ({
           field: name,
           value,
         }))
-
-        // delay loading indicator by 1s
-        loadingTimerID = setTimeout(() => {
-          setIsLoading(true)
-        }, 1000)
 
         try {
           const req = await fetch(`${getClientSideURL()}/api/form-submissions`, {
@@ -75,8 +71,6 @@ export const FormBlock: React.FC<
           })
 
           const res = await req.json()
-
-          clearTimeout(loadingTimerID)
 
           if (req.status >= 400) {
             setIsLoading(false)
@@ -123,7 +117,6 @@ export const FormBlock: React.FC<
           {!isLoading && hasSubmitted && confirmationType === 'message' && (
             <RichText data={confirmationMessage} />
           )}
-          {isLoading && !hasSubmitted && <p>Loading, please wait...</p>}
           {error && <div>{`${error.status || '500'}: ${error.message || ''}`}</div>}
           {!hasSubmitted && (
             <form id={formID} onSubmit={handleSubmit(onSubmit)}>
@@ -151,8 +144,9 @@ export const FormBlock: React.FC<
                   })}
               </div>
 
-              <Button form={formID} type="submit" variant="default">
-                {submitButtonLabel}
+              <Button form={formID} type="submit" variant="default" disabled={isLoading}>
+                {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                {isLoading ? 'Submitting...' : submitButtonLabel}
               </Button>
             </form>
           )}

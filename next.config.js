@@ -6,6 +6,17 @@ const NEXT_PUBLIC_SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL || process.env
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'standalone',
+  serverExternalPackages: [
+    'sharp',
+    'mongodb',
+    'bson',
+    'mongoose',
+    '@aws-sdk/client-s3',
+    '@aws-sdk/lib-storage',
+    '@aws-sdk/s3-request-presigner',
+    'graphql',
+  ],
   experimental: {
     serverActions: {
       allowedOrigins: [
@@ -15,6 +26,7 @@ const nextConfig = {
     },
   },
   images: {
+    unoptimized: true,
     remotePatterns: [
       ...[NEXT_PUBLIC_SERVER_URL /* 'https://example.com' */].map((item) => {
         const url = new URL(item)
@@ -24,6 +36,28 @@ const nextConfig = {
           protocol: url.protocol.replace(':', ''),
         }
       }),
+      // Tencent COS
+      {
+        hostname: '*.cos.ap-nanjing.myqcloud.com',
+        protocol: 'https',
+      },
+      // AWS S3
+      {
+        hostname: '*.s3.amazonaws.com',
+        protocol: 'https',
+      },
+      {
+        hostname: '*.s3.*.amazonaws.com',
+        protocol: 'https',
+      },
+      {
+        hostname: 's3.amazonaws.com',
+        protocol: 'https',
+      },
+      {
+        hostname: 's3.*.amazonaws.com',
+        protocol: 'https',
+      },
     ],
   },
   webpack: (webpackConfig) => {
