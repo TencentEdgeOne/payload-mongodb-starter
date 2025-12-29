@@ -12,6 +12,7 @@ import { RenderHero } from '@/heros/RenderHero'
 import { generateMeta } from '@/utilities/generateMeta'
 import PageClient from './page.client'
 import { LivePreviewListener } from '@/components/LivePreviewListener'
+import { BackButton } from '@/components/BackButton'
 
 export async function generateStaticParams() {
   const payload = await getPayload({ config: configPromise })
@@ -73,6 +74,12 @@ export default async function Page({ params: paramsPromise }: Args) {
       <PayloadRedirects disableNotFound url={url} />
 
       {draft && <LivePreviewListener />}
+
+      {slug !== 'home' && (
+        <div className="container mb-4">
+          <BackButton />
+        </div>
+      )}
 
       <RenderHero {...hero} />
       <RenderBlocks blocks={layout} />
