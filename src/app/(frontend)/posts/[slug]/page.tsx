@@ -14,7 +14,6 @@ import { PostHero } from '@/heros/PostHero'
 import { generateMeta } from '@/utilities/generateMeta'
 import PageClient from './page.client'
 import { LivePreviewListener } from '@/components/LivePreviewListener'
-import { BackButton } from '@/components/BackButton'
 
 export async function generateStaticParams() {
   const payload = await getPayload({ config: configPromise })
@@ -60,10 +59,6 @@ export default async function Post({ params: paramsPromise }: Args) {
       <PayloadRedirects disableNotFound url={url} />
 
       {draft && <LivePreviewListener />}
-
-      <div className="container mb-4">
-        <BackButton />
-      </div>
 
       <PostHero post={post} />
 
