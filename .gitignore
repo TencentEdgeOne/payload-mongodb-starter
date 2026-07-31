@@ -22,7 +22,7 @@ node_modules/
 
 # Tencent Cloud EdgeOne
 .env
-.edgeone/*
+.edgeone/
 !.edgeone/project.json
 .tef_dist/*
 

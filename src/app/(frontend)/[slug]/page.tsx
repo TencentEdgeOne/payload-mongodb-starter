@@ -14,6 +14,8 @@ import PageClient from './page.client'
 import { LivePreviewListener } from '@/components/LivePreviewListener'
 import { BackButton } from '@/components/BackButton'
 
+export const revalidate = 600
+
 export async function generateStaticParams() {
   const payload = await getPayload({ config: configPromise })
   const pages = await payload.find({
