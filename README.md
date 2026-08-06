@@ -135,5 +135,28 @@ Basic access control is setup to limit access to various content based based on 
 
 For more details on how to extend this functionality, see the [Payload Access Control](https://payloadcms.com/docs/access-control/overview#access-control) docs.
 
+#### On-demand Revalidation
+
+This template includes hooks for collections and globals that revalidate frontend pages on content change — deployed on EdgeOne Pages, the CDN cache is automatically purged so visitors see updates within seconds.
+
+Each collection hook calls `revalidatePath()` to purge the specific URL from the CDN edge:
+
+```ts
+// src/collections/Posts/hooks/revalidatePost.ts
+import { revalidatePath, revalidateTag } from 'next/cache'
+
+export const revalidatePost: CollectionAfterChangeHook<Post> = ({
+  doc,
+  req: { payload },
+}) => {
+  if (doc._status === 'published') {
+    const path = `/posts/${doc.slug}`
+    payload.logger.info(`Revalidating post at path: ${path}`)
+    revalidatePath(path)
+    revalidateTag('posts-sitemap')
+  }
+  return doc
+}
+```
 
 See [Payload Docs](https://payloadcms.com/docs/getting-started/what-is-payload) for more details.

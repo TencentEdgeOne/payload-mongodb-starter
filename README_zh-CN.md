@@ -137,4 +137,28 @@ Payload 配置专门针对大多数网站的需求进行了定制，预配置如
 
 如需了解如何扩展此功能，请参阅 [Payload Access Control](https://payloadcms.com/docs/access-control/overview#access-control) 文档。
 
+#### 按需再生（On-demand Revalidation）
+
+本模板为集合和全局配置了 hooks，当内容发生变更时自动触发前端页面再生 — 部署到 EdgeOne Pages 后，CDN 缓存会被自动清除，访问者在数秒内即可看到最新内容。
+
+每个集合 hook 通过调用 `revalidatePath()` 清除 CDN 边缘节点上对应 URL 的缓存：
+
+```ts
+// src/collections/Posts/hooks/revalidatePost.ts
+import { revalidatePath, revalidateTag } from 'next/cache'
+
+export const revalidatePost: CollectionAfterChangeHook<Post> = ({
+  doc,
+  req: { payload },
+}) => {
+  if (doc._status === 'published') {
+    const path = `/posts/${doc.slug}`
+    payload.logger.info(`Revalidating post at path: ${path}`)
+    revalidatePath(path)
+    revalidateTag('posts-sitemap')
+  }
+  return doc
+}
+```
+
 更多详情请参阅 [Payload 官方文档](https://payloadcms.com/docs/getting-started/what-is-payload)。
